@@ -1,0 +1,26 @@
+
+@import "../../../App.scss";
+.movies {
+    width: 120rem;
+    height: 60rem;
+    border: .1rem solid orange;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    @include respond(tab-land) {
+        width: 90rem;
+        height: auto;
+    }
+    @include respond(tab-port) {
+        width: 70rem;
+    }
+    @include respond(phone) {
+        width: 50rem;
+        top: 65%;
+    }
+}

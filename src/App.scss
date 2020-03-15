@@ -1,0 +1,85 @@
+
+
+// Mixins
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 37.5em) { @content };    //600px
+    }
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width: 56.25em) { @content };     //900px
+    }
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width: 75em) { @content };    //1200px
+    }
+    @if $breakpoint == big-desktop {
+        @media only screen and (min-width: 112.5em) { @content };    //1800
+    }
+}
+
+@mixin absCenter {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+// Base Styling (Global Styling)
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+        text-decoration: none;
+
+}
+
+html {
+    font-size: 62.5%; 
+
+    @include respond(tab-land) { 
+        font-size: 56.25%; 
+    }
+
+    @include respond(tab-port) { 
+        font-size: 50%; 
+    }
+    
+    @include respond(big-desktop) {
+        font-size: 75%; 
+    }
+
+}
+
+body {
+    box-sizing: border-box;
+    font-weight: 400;
+    background-color: rgb(0, 0, 0);
+}
+
+.icon {
+    position: fixed;
+    top: 3rem;
+    left: 4rem;
+    height: 10rem;
+    cursor: pointer;
+}
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    opacity: .2;
+    overflow: hidden;
+    @include respond(phone) {
+        height: 110vh;
+    }
+    &__content {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}

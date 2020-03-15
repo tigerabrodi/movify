@@ -1,0 +1,86 @@
+@import "../../../App.scss";
+
+.movie {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90rem;
+    height: 80rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include respond(tab-land) {
+        width: 70rem;
+    }
+    @include respond(phone) {
+        width: 45rem;
+    }
+    &__image {
+        height: 70rem;
+        box-shadow: 0rem .5rem 1rem orangered;
+        @include respond(tab-land) {
+            height: 60rem;
+        }
+        @include respond(phone) {
+            height: 25rem;
+        }
+    }
+
+    &__info-box {
+        height: 75rem;
+        width: 50rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        @include respond(tab-land) {
+            width: 40rem;
+        }
+        @include respond(phone) {
+            width: 30rem;
+        }
+    }
+
+    &__title {
+        font-family: "Josefin Sans";
+        color: orange;
+    }
+    &__year {
+        font-family: "Amatic SC";
+        color: orangered;
+        font-size: 3rem;
+    }
+    &__rated {
+        font-family: "Josefin Sans";
+        color: orange;
+    }
+    &__runtime {
+        font-family: "Amatic SC";
+        color: orangered;
+        font-size: 3rem;
+    }
+    &__genre {
+        font-family: "Josefin Sans";
+        color: orange;
+    }
+    &__actors {
+        font-family: "Amatic SC";
+        color: orangered;
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    &__rating {
+        font-family: "Josefin Sans";
+        color: orange;
+    }
+
+    &__plot {
+        font-family: "Amatic SC";
+        color: orangered;
+        font-size: 3rem;
+        text-align: center;
+    }
+
+}

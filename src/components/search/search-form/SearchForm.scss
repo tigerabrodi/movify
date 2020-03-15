@@ -1,0 +1,97 @@
+@import "../../../App.scss";
+.search-form {
+    height: 10rem;
+    width: 80rem;
+    position: relative;
+    top: 8vh;
+    box-shadow: 0rem 0rem 1rem orange;
+    left: 25vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+
+
+    @include respond(tab-land) {
+        width: 62rem;
+    }
+
+    @include respond(tab-port) {
+        width: 55rem;
+        left: 20vw;
+    }
+
+
+    @include respond(phone) {
+        width: 35rem;
+        left: 13vw;
+        top: 14vh;
+    }
+
+    &__title {
+        font-size: 2.9rem;
+        font-family: "Amatic SC";
+        font-weight: bold;
+        color: orangered;
+        letter-spacing: .4rem;
+        @include respond(phone) {
+            font-size: 2.3rem;
+            letter-spacing: .2rem;
+        }
+    }
+
+    &__input {
+        background-color: rgba(255, 68, 0, 0.479);
+        outline: none;
+        border: .2rem solid black;
+        font-family: "Josefin Sans";
+        font-size: 1.4rem;
+        width: 40rem;
+        height: 4rem;
+        border-radius: .4rem;
+        padding: 1rem 2rem;
+        color: rgb(223, 169, 69);
+        &::placeholder {
+            color: rgb(224, 175, 85);
+        }
+        @include respond(phone) {
+            width: 20rem;
+        }
+    }
+    &__button {
+        height: 4rem;
+        width: 4rem;
+        background-color: rgba(255, 68, 0, 0.602);
+        color: rgb(102, 24, 0);
+        border: .1rem solid black;
+        text-shadow: 0rem .2rem 1rem white;
+        cursor: pointer;
+        border-radius: .4rem;
+        font-size: 2rem;
+        transition: all .3s;
+        &:hover {
+            transform: scale(1.1);
+        }
+        &:active,
+        &:focus {
+            transform: scale(.8);
+            border: .1rem solid black;
+            outline: none;
+        }
+    }
+
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-evenly;
+        height: 5rem;
+        width: 60rem;
+        align-items: center;
+        @include respond(tab-port) {
+            width: 40rem;
+        }
+        @include respond(phone) {
+            width: 25rem;
+        }
+    }
+}
